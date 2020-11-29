@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01181792-f393-453c-be11-df880a0032a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/app/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/app/MysqlConn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/dao/ContactDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/dao/ContactDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/model/Contact.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/model/ContactRowMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-config.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/app.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/app/App.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/app/MysqlConn.class" afterDir="false" />
@@ -140,7 +131,7 @@
       <workItem from="1601311092948" duration="681000" />
       <workItem from="1604043312065" duration="80000" />
       <workItem from="1606286400314" duration="6503000" />
-      <workItem from="1606659414465" duration="268000" />
+      <workItem from="1606659414465" duration="568000" />
     </task>
     <task id="LOCAL-00001" summary="+ update">
       <created>1606659659925</created>
@@ -149,7 +140,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606659659925</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="+ db-conn prj">
+      <created>1606659804221</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606659804221</updated>
+    </task>
+    <task id="LOCAL-00003" summary="+u App.java">
+      <created>1606659978984</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606659978984</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,13 +162,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="+ update" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ update" />
+    <MESSAGE value="+ db-conn prj" />
+    <MESSAGE value="+u App.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="+u App.java" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="318" y="0" key="CommitChangelistDialog2" timestamp="1606659795845">
+    <state x="318" y="0" key="CommitChangelistDialog2" timestamp="1606659973928">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="318" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606659795845" />
+    <state x="318" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606659973928" />
     <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1600243736815">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -184,10 +191,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606659539226" />
-    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606659807991">
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606659980885">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606659807991" />
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606659980885" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1600536294086">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
