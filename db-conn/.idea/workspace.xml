@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01181792-f393-453c-be11-df880a0032a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/app.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/app/App.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/app/MysqlConn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/dao/ContactDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/dao/ContactDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/model/Contact.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/model/ContactRowMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/spring-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/db-conn-1.0.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+    <list default="true" id="31cfda21-6b24-438d-8d29-106980590623" name="Revert &quot;.gitignore fix&quot;" comment="Revert &quot;.gitignore fix&quot;&#10;&#10;This reverts commit 40629a16">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <list id="01181792-f393-453c-be11-df880a0032a5" name="Default Changelist" comment="+u App.java">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +22,32 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="3" end1="17" start2="3" end2="9" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="33" end1="33" start2="25" end2="51" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="56" end1="57" start2="74" end2="75" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="101" end1="102" start2="119" end2="120" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="133" end1="134" start2="151" end2="154" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="156" end1="157" start2="176" end2="226" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="162" end1="162" start2="231" end2="242" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="165" end1="165" start2="245" end2="246" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="166" end1="167" start2="247" end2="250" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="169" end1="170" start2="252" end2="253" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="172" end1="173" start2="255" end2="264" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="177" end1="178" start2="268" end2="269" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="180" end1="182" start2="271" end2="273" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="184" end1="186" start2="275" end2="277" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="188" end1="190" start2="279" end2="281" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="192" end1="194" start2="283" end2="289" changelist="31cfda21-6b24-438d-8d29-106980590623" />
+        <range start1="196" end1="198" start2="291" end2="293" changelist="01181792-f393-453c-be11-df880a0032a5" />
+        <range start1="200" end1="201" start2="295" end2="296" changelist="01181792-f393-453c-be11-df880a0032a5" />
+        <range start1="209" end1="210" start2="304" end2="305" changelist="01181792-f393-453c-be11-df880a0032a5" />
+        <range start1="212" end1="213" start2="307" end2="308" changelist="01181792-f393-453c-be11-df880a0032a5" />
+      </ranges>
+    </file>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -54,7 +72,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="Ignore Files Support" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -99,7 +117,7 @@
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\nishchay.naresh\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -131,7 +149,9 @@
       <workItem from="1601311092948" duration="681000" />
       <workItem from="1604043312065" duration="80000" />
       <workItem from="1606286400314" duration="6503000" />
-      <workItem from="1606659414465" duration="568000" />
+      <workItem from="1606659414465" duration="3395000" />
+      <workItem from="1606663042607" duration="4671000" />
+      <workItem from="1606672558007" duration="731000" />
     </task>
     <task id="LOCAL-00001" summary="+ update">
       <created>1606659659925</created>
@@ -154,44 +174,119 @@
       <option name="project" value="LOCAL" />
       <updated>1606659978984</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="+u App.java">
+      <created>1606660100413</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606660100413</updated>
+    </task>
+    <task id="LOCAL-00005" summary="+ .gitignore">
+      <created>1606660613350</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606660613351</updated>
+    </task>
+    <task id="LOCAL-00006" summary="+u App.java">
+      <created>1606660980010</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606660980010</updated>
+    </task>
+    <task id="LOCAL-00007" summary="+u .gitignore">
+      <created>1606663559583</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606663559583</updated>
+    </task>
+    <task id="LOCAL-00008" summary="+u .gitignore">
+      <created>1606666456552</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606666456552</updated>
+    </task>
+    <task id="LOCAL-00009" summary="+u .gitignore">
+      <created>1606666513778</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606666513778</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Revert &quot;.gitignore fix&quot;&#10;&#10;This reverts commit 40629a16">
+      <created>1606673100196</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606673100196</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="+ update" />
     <MESSAGE value="+ db-conn prj" />
+    <MESSAGE value="+ .gitignore" />
     <MESSAGE value="+u App.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="+u App.java" />
+    <MESSAGE value="+u .gitignore" />
+    <MESSAGE value="Revert &quot;.gitignore fix&quot;&#10;&#10;This reverts commit 40629a16" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;.gitignore fix&quot;&#10;&#10;This reverts commit 40629a16" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="318" y="0" key="CommitChangelistDialog2" timestamp="1606659973928">
+    <state x="275" y="25" key="#Plugins" timestamp="1606662644596">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="318" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606659973928" />
+    <state x="275" y="25" key="#Plugins/0.0.1366.728@0.0.1366.728" timestamp="1606662644596" />
+    <state x="318" y="0" key="CommitChangelistDialog2" timestamp="1606673325839">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="318" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606673325839" />
+    <state x="97" y="220" width="1182" height="544" key="DiffContextDialog" timestamp="1606673300536">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="97" y="220" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1606673300536" />
     <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1600243736815">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600243736815" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1606659539227">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1606673228585">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606659539227" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1606659539225">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606673228585" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1606673228583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606659539225" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1606659539225">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606673228583" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1606673228580">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606659539225" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1606659539226">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606673228580" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1606673228584">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606659539226" />
-    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606659980885">
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606673228584" />
+    <state x="186" y="9" key="SettingsEditor" timestamp="1606666916112">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="186" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1606666916112" />
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606667140494">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606659980885" />
