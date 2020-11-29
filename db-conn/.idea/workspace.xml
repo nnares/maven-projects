@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01181792-f393-453c-be11-df880a0032a5" name="Default Changelist" comment="" />
+    <list default="true" id="01181792-f393-453c-be11-df880a0032a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/app/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/app/MysqlConn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/dao/ContactDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/dao/ContactDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/model/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nish/jpmc/db/connpool/model/ContactRowMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/app.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/app/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/app/MysqlConn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/dao/ContactDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/dao/ContactDaoImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/model/Contact.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/nish/jpmc/db/connpool/model/ContactRowMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/db-conn-1.0.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +51,7 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="1ewpZDjTKPnQGQAVy30keFjETR0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -35,6 +59,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -115,13 +140,30 @@
       <workItem from="1601311092948" duration="681000" />
       <workItem from="1604043312065" duration="80000" />
       <workItem from="1606286400314" duration="6503000" />
+      <workItem from="1606659414465" duration="268000" />
     </task>
+    <task id="LOCAL-00001" summary="+ update">
+      <created>1606659659925</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606659659925</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="+ update" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ update" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="318" y="0" key="CommitChangelistDialog2" timestamp="1606659657289">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="318" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606659657289" />
     <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1600243736815">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -142,6 +184,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606659539226" />
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606659663230">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606659663230" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1600536294086">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
