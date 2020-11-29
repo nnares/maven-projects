@@ -23,14 +23,14 @@ public class App {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-        int id = 0;
+        int id;
         Contact contact;
         ContactDaoImpl contactDao = (ContactDaoImpl) context.getBean("dao");
 
 
         List<Contact> allContacts = contactDao.getAllContacts();
         System.out.println("------------All Contacts-------------- ");
-        allContacts.forEach(element -> System.out.println(element));
+        allContacts.forEach(System.out::println);
 
 
         id= 54;
