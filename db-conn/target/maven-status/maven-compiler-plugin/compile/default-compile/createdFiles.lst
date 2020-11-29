@@ -1,6 +1,0 @@
-nish\jpmc\db\connpool\model\Contact.class
-nish\jpmc\db\connpool\app\App.class
-nish\jpmc\db\connpool\app\MysqlConn.class
-nish\jpmc\db\connpool\dao\ContactDao.class
-nish\jpmc\db\connpool\dao\ContactDaoImpl.class
-nish\jpmc\db\connpool\model\ContactRowMapper.class
