@@ -1,0 +1,109 @@
+
+http://localhost:8080/time
+GET
+
+---------------
+
+http://localhost:8080/messages
+GET
+o/p => json
+
+
+http://localhost:8080/messages/3
+GET
+o/p => json
+
+http://localhost:8080/messages
+POST
+
+Header Parameter -
+Content-Type:'application/json'
+raw, JSON from the drop down
+
+{
+	"id": 1,
+	"message": "IPL is kicking off tomorrow",
+	"author": "M S Dhoni",
+	"created": "18/09/2020"
+}
+
+{
+	"id": 2,
+	"message": "Todays poll - Mountain / Beach ?",
+	"author": "Aprajita Lilly",
+	"created": "17/09/2020"
+}
+
+{
+	"id": 3,
+	"message": "Delhi goes top in points table",
+	"author": "Ricky Pointing",
+	"created": "Sun Oct 04 10:44:31 IST 2020"
+}
+
+
+http://localhost:8080/messages/3
+PUT
+Content-Type:'application/json'
+raw, JSON from the drop down
+
+{
+	"message": "KKR goes 3rd after beating CSK Tonight",
+	"author": "Sunil Narain",
+	"created": "08 OCT 2020"
+}
+
+http://localhost:8080/messages/3
+DELETE
+
+http://localhost:8080/messages/3
+PATCH
+
+Header Parameter -
+Content-Type:'application/json'
+raw, JSON from the drop down
+
+Delhi vs Rajsthan tonight
+
+-------------------------API Versioning -----------------------
+
+
+    /*  URI Versioning
+    http://localhost:8080/v1/actor
+    http://localhost:8080/v2/actor
+     */
+
+
+    /*  Request Parameter Versioning
+    http://localhost:8080/actor/param?version=1
+    http://localhost:8080/actor/param?version=2
+     */
+
+	Send a key-value in header parameter X-API-VERSION:1/2
+    /*      (Custom) Headers Versioning
+            http://localhost:8080/actor/header
+                headers=[X-API-VERSION=1]
+            http://localhost:8080/actor/header
+                headers=[X-API-VERSION=2]
+     */
+
+    /*      Media Type Versioning (a.k.a “Content Negotiation” or “Accept Header”)
+            http://localhost:8080/actor/produces
+                headers[Accept=application/vnd.company.app-v1+json]
+            http://localhost:8080/actor/produces
+                headers[Accept=application/vnd.company.app-v2+json]
+     */
+
+
+------------------------- Content Negotiation -----------------------
+http://localhost:8080/messages
+GET
+Accept : application/json
+response = > json
+
+
+http://localhost:8080/messages
+GET
+Accept : application/xml
+response = > xml
+
