@@ -1,4 +1,11 @@
-# Created by .ignore support plugin (hsz.mobi)
+
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+target/
 ### Java template
 # Compiled class file
 *.class
@@ -26,10 +33,7 @@ hs_err_pid*
 
 /target/
 /.idea/
+src/test/
 
 /.idea/workspace.xml
 .idea/workspace.xml
-
-/out/
-
-out\production\java-basics\META-INF
