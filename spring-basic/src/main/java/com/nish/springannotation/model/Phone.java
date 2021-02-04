@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-@Component
+@Component("myPhone")
 public class Phone {
 
     private String name;
