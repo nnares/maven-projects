@@ -14,9 +14,15 @@ public class AnnotationApp2 {
         context.scan("com.nish.springannotation.model");
         context.refresh();
 
+        // extracting bean using .class object
         Phone phone = context.getBean(Phone.class);
 
-        System.out.println(" -------------dafault values-------------- ");
+        // extracting bean using bean name - phone
+        // by default instances of this class have the same name as the class name with a lowercase initial
+//        Phone phone = (Phone) context.getBean("myPhone");
+//        Phone phone = context.getBean("myPhone", Phone.class);
+
+        System.out.println(" -------------default values-------------- ");
         System.out.println("name - " + phone.getName());
         System.out.println("processor - " + phone.getProcessor());
 
