@@ -47,7 +47,7 @@ public class DemoApp {
 
 /*
  * battery = Battery{name='DefaultName'}
- *  -------------dafault values--------------
+ *  -------------default values--------------
  * name - null
  * processor - null
  *  --------------DummyValue----------------
