@@ -1,11 +1,10 @@
-package com.nish.springannotation.app;
+package com.nish.springannotation.atcomponent;
 
-import com.nish.springannotation.model.Phone;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
 // Sample code for @Component annotation
-public class AnnotationApp2 {
+public class DemoApp {
 
     public static void main(String[] args) {
 
@@ -15,12 +14,12 @@ public class AnnotationApp2 {
         context.refresh();
 
         // extracting bean using .class object
-        Phone phone = context.getBean(Phone.class);
+//        Phone phone = context.getBean(Phone.class);
 
         // extracting bean using bean name - phone
         // by default instances of this class have the same name as the class name with a lowercase initial
 //        Phone phone = (Phone) context.getBean("myPhone");
-//        Phone phone = context.getBean("myPhone", Phone.class);
+        Phone phone = context.getBean("myPhone", Phone.class);
 
         System.out.println(" -------------default values-------------- ");
         System.out.println("name - " + phone.getName());

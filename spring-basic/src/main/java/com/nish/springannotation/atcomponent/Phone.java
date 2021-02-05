@@ -1,4 +1,4 @@
-package com.nish.springannotation.model;
+package com.nish.springannotation.atcomponent;
 
 import org.springframework.stereotype.Component;
 
