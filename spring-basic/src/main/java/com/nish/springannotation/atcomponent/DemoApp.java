@@ -10,14 +10,18 @@ public class DemoApp {
 
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-        context.scan("com.nish.springannotation.model");
+        context.scan("com.nish.springannotation.atcomponent");
         context.refresh();
+
+
+        // extracting bean using bean name - battery
+        // by default instances of this class have the same name as the class name with a lowercase initial
+        Battery battery = context.getBean("battery", Battery.class);
+        System.out.println("battery = " + battery);
 
         // extracting bean using .class object
 //        Phone phone = context.getBean(Phone.class);
 
-        // extracting bean using bean name - phone
-        // by default instances of this class have the same name as the class name with a lowercase initial
 //        Phone phone = (Phone) context.getBean("myPhone");
         Phone phone = context.getBean("myPhone", Phone.class);
 
@@ -42,6 +46,7 @@ public class DemoApp {
 }
 
 /*
+ * battery = Battery{name='DefaultName'}
  *  -------------dafault values--------------
  * name - null
  * processor - null
