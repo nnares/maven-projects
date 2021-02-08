@@ -7,16 +7,16 @@
 
     <context:annotation-config/>
 
-    <bean id="e1" class="com.nish.springannotation.model.Engine">
+    <bean id="engine1" class="com.nish.springannotation.atautowired.model.EngineCapacity">
         <property name="horsePower" value="150"/>
     </bean>
 
-    <bean id="bike" class="com.nish.springannotation.model.Bike"/>
-
-    <bean id="e2" class="com.nish.springannotation.model.Engine">
+    <bean id="engine2" class="com.nish.springannotation.atautowired.model.EngineCapacity">
         <qualifier value="bikeEngine"/>
         <property name="horsePower" value="220"/>
     </bean>
+
+    <bean id="bike" class="com.nish.springannotation.atautowired.model.Bike"/>
 
 
 </beans>
