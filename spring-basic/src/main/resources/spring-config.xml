@@ -16,7 +16,9 @@
         <property name="horsePower" value="220"/>
     </bean>
 
-    <bean id="bike" class="com.nish.springannotation.atautowired.model.Bike"/>
+    <bean id="bike" class="com.nish.springannotation.atautowired.model.Bike">
+        <property name="engineCapacity" ref="engine2"/>
+    </bean>
 
 
 </beans>
