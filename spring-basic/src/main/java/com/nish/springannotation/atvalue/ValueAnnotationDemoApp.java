@@ -26,14 +26,14 @@ public class ValueAnnotationDemoApp {
 
     }
 
-    private static void executeSQL(Connection conn){
+    private static void executeSQL(Connection conn) {
 
         System.out.println("-----------------------Contact table data-------------------");
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("select * from contact");
 
-            while (rs.next()){
+            while (rs.next()) {
                 System.out.println(rs.getInt(1) + "  " + rs.getString(2)
                         + "  " + rs.getString(3)
                         + "  " + rs.getString(4) + "  " + rs.getString(5));
@@ -43,15 +43,24 @@ public class ValueAnnotationDemoApp {
             e.printStackTrace();
         }
 
-     }
+    }
 
 
 }
 
-
-
 /*
- *  country = Country{name='India', ccy='Rs'}
- *  TradeFeed for productName - Option is been loaded for the date of - 01/01/2020
+ * o/p =>
  *
+ *	---------------------DB Config Details----------------------
+ *	Driver Class = com.mysql.jdbc.Driver
+ *	DB URL = jdbc:mysql://localhost:3306/poc
+ *	User Name = root
+ *	Password = root
+ *	--------------------------------------
+ *	50  Koyel Chowdhary  koyel.chowdhary@example.com  Street -10, Kolkata  9911991199
+ *	51  Subhakankshi Nayak  subhakankshi.nayak@example.com  Street -10, Bhuwneshwar  9922992299
+ *	52  Gaurav Tiwari  gaurav.tiwari@example.com  5th Street, Aagra UP  9933993399
+ *	53  Alok Kumar  alok.kumar@example.com  Baadh, Bihar  9944994499
+ *	54  Subhi Ojha  subhi.ojha@example.com  Kankarbagh, Patna  9955995599
+ *	55  Shailendra Pandey  shailendra.pandey@example.com  Satna, MP  9966996699
  * */
