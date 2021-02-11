@@ -14,24 +14,21 @@ public class ValueAnnotationDemoApp {
     public static void main(String[] args) {
 
         AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext();
-        appContext.register(DBConnection.class);
+        appContext.scan("com.nish.springannotation.atvalue");
         appContext.refresh();
 
-        for (String beanName : appContext.getBeanDefinitionNames()) {
-            System.out.println(beanName);
-        }
-
-        // extracting bean using bean name - dBConnection
+        // extracting bean using bean name - DBConnection (since first two characters are uppercase)
         DBConnection dbConnection = appContext.getBean("DBConnection", DBConnection.class);
         dbConnection.printDBConfig();
 
-//        executeSQL(dbConnection.grtDBConnection());
-//        appContext.close();
+        executeSQL(dbConnection.getDBConnection());
+        appContext.close();
 
     }
 
     private static void executeSQL(Connection conn){
 
+        System.out.println("-----------------------Contact table data-------------------");
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("select * from contact");
