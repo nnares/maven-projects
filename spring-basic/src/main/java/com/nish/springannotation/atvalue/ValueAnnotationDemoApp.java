@@ -6,9 +6,20 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Map;
 
 
-// Sample code for @Value annotation
+//
+
+/*
+*
+* Sample code for @Value annotation
+* To read the values from propertied file need to instantiate a bean of - PropertySourcesPlaceholderConfigurer
+* and pass it two info
+*   1 @ComponentScan - bean location, where @Value is been used
+*   2 @PropertySource - properties file loaction
+*
+* */
 public class ValueAnnotationDemoApp {
 
     public static void main(String[] args) {
@@ -17,20 +28,25 @@ public class ValueAnnotationDemoApp {
         appContext.scan("com.nish.springannotation.atvalue");
         appContext.refresh();
 
-        // extracting bean using bean name - DBConnection (since first two characters are uppercase)
-        DBConnection dbConnection = appContext.getBean("DBConnection", DBConnection.class);
-        dbConnection.printDBConfig();
+        // extracting bean using bean name - DBConfiguration (since first two characters are uppercase)
+        DBConfiguration dbConfiguration = appContext.getBean("DBConfiguration", DBConfiguration.class);
+        dbConfiguration.printDBConfig();
+        executeSQL(dbConfiguration);
 
-        executeSQL(dbConnection.getDBConnection());
+        Map<String, String> months = appContext.getBean("monthMap", Map.class);
+        System.out.println("-----------------------Months Map-------------------");
+        System.out.println("months = " + months);
+
         appContext.close();
 
     }
 
-    private static void executeSQL(Connection conn) {
+    private static void executeSQL(DBConfiguration dbConfiguration) {
 
         System.out.println("-----------------------Contact table data-------------------");
+        Connection connection = dbConfiguration.getDBConnection();
         try {
-            Statement stmt = conn.createStatement();
+            Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("select * from contact");
 
             while (rs.next()) {
@@ -38,7 +54,7 @@ public class ValueAnnotationDemoApp {
                         + "  " + rs.getString(3)
                         + "  " + rs.getString(4) + "  " + rs.getString(5));
             }
-            conn.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

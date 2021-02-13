@@ -9,8 +9,8 @@ import java.sql.DriverManager;
 /*
 *	Default bean name for @Component
 *   if(first two characters are uppercase) {
-* 		class 	- 	com.xyz.FOoServiceImpl, com.nish.springannotation.atvalue.DBConnection
-* 		name 	- 	FOoServiceImpl, DBConnection
+* 		class 	- 	com.xyz.FOoServiceImpl, com.nish.springannotation.atvalue.DBConfiguration
+* 		name 	- 	FOoServiceImpl, DBConfiguration
 * 	}else{
 *		class  	- 	com.xyz.FooServiceImpl, com.nish.springannotation.atautowired.model.VehicleDriver
 * 		name 	-	fooServiceImpl, vehicleDriver
@@ -18,7 +18,7 @@ import java.sql.DriverManager;
 * */
 
 @Component
-public class DBConnection {
+public class DBConfiguration {
 
 	@Value("${mysql.db.driver}")
 	private String driverClass;
@@ -29,7 +29,7 @@ public class DBConnection {
 	@Value("${mysql.db.password}")
 	private char[] password;
 
-	public DBConnection() {
+	public DBConfiguration() {
 	}
 
 	public void printDBConfig() {
