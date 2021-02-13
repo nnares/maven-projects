@@ -33,7 +33,7 @@ public class ValueAnnotationDemoApp {
         dbConfiguration.printDBConfig();
         executeSQL(dbConfiguration);
 
-        Map<String, String> months = appContext.getBean("monthMap", Map.class);
+        Map months = appContext.getBean("monthMap", Map.class);
         System.out.println("-----------------------Months Map-------------------");
         System.out.println("months = " + months);
 
