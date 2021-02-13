@@ -10,8 +10,14 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+
+/*
+ * To read the values from propertied file need to instantiate a bean of - PropertySourcesPlaceholderConfigurer
+ * and pass it one info
+ *   @PropertySource - properties file location
+ *
+ * */
 @Configuration
-@ComponentScan(basePackages = "com.nish.springannotation.atvalue")
 @PropertySource(value = {"classpath:application.properties"})
 public class AppConfig {
 

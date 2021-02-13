@@ -15,9 +15,8 @@ import java.util.Map;
 *
 * Sample code for @Value annotation
 * To read the values from propertied file need to instantiate a bean of - PropertySourcesPlaceholderConfigurer
-* and pass it two info
-*   1 @ComponentScan - bean location, where @Value is been used
-*   2 @PropertySource - properties file loaction
+* and pass it one info
+*   @PropertySource - properties file location
 *
 * */
 public class ValueAnnotationDemoApp {
@@ -28,6 +27,7 @@ public class ValueAnnotationDemoApp {
         appContext.scan("com.nish.springannotation.atvalue");
         appContext.refresh();
 
+/*
         // extracting bean using bean name - DBConfiguration (since first two characters are uppercase)
         DBConfiguration dbConfiguration = appContext.getBean("DBConfiguration", DBConfiguration.class);
         dbConfiguration.printDBConfig();
@@ -36,6 +36,11 @@ public class ValueAnnotationDemoApp {
         Map months = appContext.getBean("monthMap", Map.class);
         System.out.println("-----------------------Months Map-------------------");
         System.out.println("months = " + months);
+*/
+
+        // checking state of bean with default values
+        BeanDefaultValues beanDefaultValues = appContext.getBean("beanDefaultValues", BeanDefaultValues.class);
+        System.out.println(beanDefaultValues);
 
         appContext.close();
 
@@ -79,4 +84,7 @@ public class ValueAnnotationDemoApp {
  *	53  Alok Kumar  alok.kumar@example.com  Baadh, Bihar  9944994499
  *	54  Subhi Ojha  subhi.ojha@example.com  Kankarbagh, Patna  9955995599
  *	55  Shailendra Pandey  shailendra.pandey@example.com  Satna, MP  9966996699
+ * -----------------------Months Map-------------------
+ * months = {JAN=January, FEB=February, MAR=March, APR=April, MAY=May, JUN=June, JUL=July, AUG=August, SEP=September, OCT=October, NOV=November, DEC=December}
+ *
  * */
