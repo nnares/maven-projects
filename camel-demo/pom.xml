@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<camel.version>3.8.0</camel.version>
+		<mysql.driver.version>5.1.30</mysql.driver.version>
 	</properties>
 	<dependencies>
 
@@ -43,6 +44,26 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
+		</dependency>
+
+
+
+		<!-- dependency for mysql driver      -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.driver.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jdbc</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
 		</dependency>
 
 <!--
