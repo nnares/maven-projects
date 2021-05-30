@@ -14,6 +14,7 @@ public class BeanDefaultValues {
 
 
     /*
+    * 1. Basic Assignment
     * @Value annotation argument can be a string only, but spring tries to convert it to the specified type.
     *  Below code will work fine and assign the boolean and integer values to the variable.
     * */
@@ -23,19 +24,53 @@ public class BeanDefaultValues {
     @Value("10")
     private int defaultInt;
 
-
+    /*
+    * 2. property file
+    * if(prop.key is absent)
+    *   Exception -Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'country.name.ind' in value "${country.name.ind}"
+    * Else
+    *   Attribute will populate with the value
+    * */
     @Value("${country.name.ind}")
     private String countryName;
-    /*
-    * If the key - country.name.us is not found in the spring environment properties,
-    * then the property value will be ${country.name.us}.
-    * We can assign a default value that will get assigned if the key is missing from spring environment properties.
-    * this will only happen if - @PropertySource is not been give,
-    * else - Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'country.name.us' in value "${country.name.us}"
-    * */
 
+    /*
+    * 2.5 Nested format in @Value annotation
+    *
+    * */
+    @Value("Welcome to ${country.name.ind}")
+    private String welcomeCountryMsg;
+
+    @Value("${some.key:${country.name.ind} is my country}")
+    private String myCountryName;
+
+    /*
+    * 3. Default Value
+    * prop.key:value -> for default value
+    * We can avoid the Exception scenario for prop key absent. Assign a default value that will get assigned if the key is missing from property file.
+    * */
     @Value("${country.name.us:Default}")
     private String defaultAppName;
+
+
+    /*
+    * propertied file value vs run config value
+    * default =>  queueName='dev.activemq.outbound',
+    * -Dmq.queue.name=run_config_queue_name =>  queueName='run_config_queue_name',
+    * */
+    @Value("${mq.queue.name}")
+    private String queueName;
+
+
+
+    /*
+    * varName:prop.key
+    * default =>  topicName='kafka.topic.name',
+    * -DtopName=run_config_topic_name =>  queueName='run_config_topic_name',
+    * */
+    @Value("${topName:kafka.topic.name}")
+    private String topicName;
+
 
     /*
     * Spring @Value – System Environment
@@ -69,13 +104,17 @@ public class BeanDefaultValues {
     @Override
     public String toString() {
         return "BeanDefaultValues{" +
-                "defaultName='" + defaultName + '\'' +
-                ", defaultBoolean=" + defaultBoolean +
-                ", defaultInt=" + defaultInt +
-                ", countryName='" + countryName + '\'' +
-                ", defaultAppName='" + defaultAppName + '\'' +
-                ", mavenHome='" + mavenHome + '\'' +
-                ", javaHome='" + javaHome + '\'' +
+                " \n defaultName='" + defaultName + '\'' +
+                ",\n defaultBoolean=" + defaultBoolean +
+                ",\n defaultInt=" + defaultInt +
+                ",\n countryName='" + countryName + '\'' +
+                ",\n welcomeCountryMsg='" + welcomeCountryMsg + '\'' +
+                ",\n myCountryName='" + myCountryName + '\'' +
+                ",\n queueName='" + queueName + '\'' +
+                ",\n topicName='" + topicName + '\'' +
+                ",\n defaultAppName='" + defaultAppName + '\'' +
+                ",\n mavenHome='" + mavenHome + '\'' +
+                ",\n javaHome='" + javaHome + '\'' +
                 '}';
     }
 }
