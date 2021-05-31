@@ -15,6 +15,6 @@ public class JdbcRoute extends RouteBuilder {
 		.setBody(constant(sql))
 		.log("${body}")
 		.to("jdbc:dataSource")
-		.to( "file:" + "{{destination.file.path}}" + "?fileName=contact_tbl.txt");
+		.to( "file:" + "{{destination.file.path}}" + "?fileName=contact_tbl.txt?fileExist=Append");
 	}
 }
