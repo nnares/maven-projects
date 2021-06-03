@@ -9,7 +9,6 @@ public class SqlComponentRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        final String sql = "select * from contact";
 
         from("direct:performDBInsert")
                 .log("Inserted new contact")

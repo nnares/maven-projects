@@ -3,7 +3,7 @@ package com.nish.camel.route;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class JdbcRoute extends RouteBuilder {
 
 	@Override
