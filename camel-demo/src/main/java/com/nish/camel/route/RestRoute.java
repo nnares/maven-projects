@@ -30,7 +30,7 @@ public class RestRoute extends RouteBuilder {
                 .log("${body}")
                 .to("rest:get:" + uri)
                 .log("${body}")
-                .log("hello owrld---------------")
+                .log("hello world---------------")
                 .to("log:first-timer");
 
 
