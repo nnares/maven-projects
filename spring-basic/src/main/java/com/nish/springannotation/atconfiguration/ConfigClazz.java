@@ -6,20 +6,27 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ConfigClazz {
 
-    // here method name is not making any significance, it could be anything.
+
+    // by default bean name will be - getCountry, same as the method name
+    @Bean
+    public Country getCountry() {
+        return new Country("USA", "USD");
+    }
+
+    // here method name is not making any significance(it could be anything). since we are explicitly defining the bean name .
     // only the return type is matters here
     @Bean(name = "countryObj")
     public Country iAmGoingToNoWhere() {
         return new Country("India", "Rs");
     }
 
-    // by default name will be - feedService, same as the method name
+    // by default bean name will be - anyMethodName, same as the method name
     @Bean
-    public TradeFeedService feedService() {
-        TradeFeedService feedService = new TradeFeedService();
-        feedService.setFeedDate("01/01/2020");
-        feedService.setProductName("Option");
-        return feedService;
+    public TradeFeedService anyMethodName() {
+        TradeFeedService reference = new TradeFeedService();
+        reference.setFeedDate("01/01/2020");
+        reference.setProductName("Option");
+        return reference;
     }
 
 /*
