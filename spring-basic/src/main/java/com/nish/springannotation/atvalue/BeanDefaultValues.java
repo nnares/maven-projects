@@ -4,6 +4,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
 @Component
 @PropertySource(value = {"classpath:application.properties"})
 public class BeanDefaultValues {
@@ -101,8 +105,30 @@ public class BeanDefaultValues {
     }
 
 
+    /*
+    * Passing collection(like list, map) value from prop file
+    *
+    * */
+
+    @Value("${string.values}")
+    private String[] strArray;
+
+    @Value("${string.values}") // list with single element
+    private List<String> strList1;
+
+    // SpEL
+    @Value("#{'${string.values}'.split(',')}") // list with five element
+    private List<String> strList2;
+
+    @Value("#{'${int.values}'.split(',')}") // list with five element
+    private List<Integer> intList;
+
+    @Value("#{${map.values}}")
+    private Map<String, String> strMap;
+
     @Override
     public String toString() {
+        collectionSize();
         return "BeanDefaultValues{" +
                 " \n defaultName='" + defaultName + '\'' +
                 ",\n defaultBoolean=" + defaultBoolean +
@@ -115,6 +141,21 @@ public class BeanDefaultValues {
                 ",\n defaultAppName='" + defaultAppName + '\'' +
                 ",\n mavenHome='" + mavenHome + '\'' +
                 ",\n javaHome='" + javaHome + '\'' +
+                ",\n strArray='" + Arrays.toString(strArray) + '\'' +
+                ",\n strList1='" + strList1 + '\'' +
+                ",\n strList2='" + strList2 + '\'' +
+                ",\n intList='" + intList + '\'' +
+                ",\n strMap='" + strMap + '\'' +
                 '}';
+
+    }
+
+    private void collectionSize() {
+        System.out.println("strArray.length = " + strArray.length);
+        System.out.println("strList1.size() = " + strList1.size());
+        System.out.println("strList2.size() = " + strList2.size());
+        System.out.println("intList.size() = " + intList.size());
+        System.out.println("strMap.size() = " + strMap.size());
+        System.out.println("----------------------------------------------");
     }
 }
