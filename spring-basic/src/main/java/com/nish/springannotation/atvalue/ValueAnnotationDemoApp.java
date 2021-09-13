@@ -9,8 +9,6 @@ import java.sql.Statement;
 import java.util.Map;
 
 
-//
-
 /*
 *
 * Sample code for @Value annotation
@@ -32,11 +30,14 @@ public class ValueAnnotationDemoApp {
         DBConfiguration dbConfiguration = appContext.getBean("DBConfiguration", DBConfiguration.class);
         dbConfiguration.printDBConfig();
         executeSQL(dbConfiguration);
+*/
 
+/*
         Map months = appContext.getBean("monthMap", Map.class);
         System.out.println("-----------------------Months Map-------------------");
         System.out.println("months = " + months);
 */
+
 
         // checking state of bean with default values
         BeanDefaultValues beanDefaultValues = appContext.getBean("beanDefaultValues", BeanDefaultValues.class);
