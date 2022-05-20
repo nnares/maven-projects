@@ -1,4 +1,4 @@
-package com.nishchay.math;
+package com.nishchay.sample;
 
 import org.junit.Assert;
 import org.junit.Before;

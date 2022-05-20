@@ -1,4 +1,4 @@
-package com.nishchay.math;
+package com.nishchay.sample;
 
 public class Math {
 
