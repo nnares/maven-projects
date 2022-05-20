@@ -1,13 +1,6 @@
-package com.mine.test.junit.math;
+package com.nishchay.math;
 
 public class Math {
-
-	public Math() {
-	}
-
-	public static void main(String[] args) {
-		System.out.println("Hello World!");
-	}
 
 	public int sum(int x, int y) {
 		return x + y;
