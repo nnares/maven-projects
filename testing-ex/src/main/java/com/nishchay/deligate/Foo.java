@@ -9,8 +9,8 @@ public abstract class Foo {
     System.out.println("Base::bar2");
   }
 
-/*  public void bar3(String name){
+  public void bar3(String name){
     System.out.println("Base::bar3" + name);
-  }*/
+  }
 
 }

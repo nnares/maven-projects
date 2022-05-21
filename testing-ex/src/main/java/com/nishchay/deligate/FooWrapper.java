@@ -18,9 +18,8 @@ public class FooWrapper extends Foo {
         delegate.bar2();
     }
 
-/*    @Override
+    @Override
     public void bar3(String name) {
         delegate.bar3(name);
-    }*/
-
+    }
 }

@@ -10,10 +10,10 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class MockitoFunctionalityTest {
+public class ArgumentCaptureBasicTest {
 
     @Test
-    public void testArgumentCaptureBasic() {
+    public void argumentCaptureBasicTest() {
         List<String> mockList = mock(List.class);
         mockList.add("java");
 
@@ -25,7 +25,7 @@ public class MockitoFunctionalityTest {
     }
 
     @Test
-    public void testArgumentCapture() {
+    public void argumentCaptureGenericTest() {
         List<String> mockList = mock(List.class);
         mockList.add(Mockito.anyString());
 

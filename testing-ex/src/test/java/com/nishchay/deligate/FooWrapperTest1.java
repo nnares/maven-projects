@@ -20,6 +20,8 @@ public class FooWrapperTest1 {
     @InjectMocks
     FooWrapper mockWrapper;
 
+
+
     ArgumentCaptor<String> argumentCaptor;
 
     @Test
@@ -67,5 +69,23 @@ public class FooWrapperTest1 {
         }
 
     }
+
+
+    @Test
+    public void testAllMethodsCallAreDelegated(){
+
+
+        Foo delegate = Mockito.mock(Foo.class);
+
+
+
+        FooWrapper wrapper = new FooWrapper(delegate);
+
+
+
+
+    }
+
+
 
 }
