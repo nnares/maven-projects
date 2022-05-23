@@ -4,8 +4,11 @@ public class FooWrapper extends Foo {
 
     private final Foo delegate;
 
-    protected FooWrapper(Foo delegate) {
+    private final String prefix;
+
+    protected FooWrapper(Foo delegate, String prefix) {
         this.delegate = delegate;
+        this.prefix = prefix;
     }
 
     @Override
@@ -22,4 +25,28 @@ public class FooWrapper extends Foo {
     public void bar3(String name) {
         delegate.bar3(name);
     }
+
+    @Override
+    public boolean isTraceEnabled() {
+        return delegate.isTraceEnabled();
+    }
+
+    @Override
+    public void trace(String msg) {
+        delegate.trace(msg);
+    }
+
+    @Override
+    public void trace(String format, Object arg) {
+        delegate.trace(format, arg);
+    }
+
+    public void error(String format, Object... arguments) {
+        delegate.error(format, arguments);
+    }
+
+    public void debug(String msg) {
+        delegate.debug(prefix + msg);
+    }
+
 }
