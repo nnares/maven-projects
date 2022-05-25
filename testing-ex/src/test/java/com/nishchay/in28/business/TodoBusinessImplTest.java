@@ -56,6 +56,8 @@ public class TodoBusinessImplTest {
         Mockito.verify(todoService, Mockito.never()).deleteTodo("Learn Spring");
 
         Mockito.verify(todoService, Mockito.times(1)).deleteTodo("Learn to Dance");
+        Mockito.verify(todoService, Mockito.atLeast(1)).deleteTodo("Learn to Dance");
+        Mockito.verify(todoService, Mockito.atLeastOnce()).deleteTodo("Learn to Dance");
         // atLeastOnce, atLeast
 
     }
