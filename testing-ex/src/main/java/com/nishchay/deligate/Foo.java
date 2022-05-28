@@ -35,4 +35,21 @@ public abstract class Foo {
   public void debug(String msg) {
     System.out.println("Base::debug" + msg);
   }
+
+  public void debug(String format, Object arg) {
+    System.out.println("Base::debug" + format + arg);
+  }
+
+  public void debug(String format, Object arg1, Object arg2) {
+    System.out.println("Base::debug" + format + arg1 + arg2);
+  }
+
+  public void debug(String format, Object... arguments) {
+    System.out.println("Base::debug" + format + arguments);
+  }
+
+  public void debug(String msg, Throwable t) {
+    System.out.println("Base::debug" + msg + t);
+  }
+
 }

@@ -49,4 +49,20 @@ public class FooWrapper extends Foo {
         delegate.debug(prefix + msg);
     }
 
+    public void debug(String format, Object arg) {
+        delegate.debug(format, arg);
+    }
+
+    public void debug(String format, Object arg1, Object arg2) {
+        delegate.debug(format, arg1, arg2);
+    }
+
+    public void debug(String format, Object... arguments) {
+        delegate.debug(format, arguments);
+    }
+
+    public void debug(String msg, Throwable t) {
+        delegate.debug(prefix + msg, t);
+    }
+
 }
