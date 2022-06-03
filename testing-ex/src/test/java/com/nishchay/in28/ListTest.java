@@ -1,4 +1,4 @@
-package com.nishchay.in28.list;
+package com.nishchay.in28;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

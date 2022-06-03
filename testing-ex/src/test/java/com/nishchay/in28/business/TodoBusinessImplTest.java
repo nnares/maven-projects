@@ -21,6 +21,7 @@ public class TodoBusinessImplTest {
 
         // defining the dependency object behaviour
         List<String> allTodos = Arrays.asList("Learn Spring MVC", "Learn Spring", "Learn to Dance");
+        // Setting up stubbed responses using mocks
         when(todoService.retrieveTodos("Dummy")).thenReturn(allTodos);
 
         // injecting the dependency object mocked copy to actual object
