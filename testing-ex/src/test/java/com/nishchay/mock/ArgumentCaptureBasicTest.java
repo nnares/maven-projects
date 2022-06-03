@@ -18,6 +18,7 @@ public class ArgumentCaptureBasicTest {
         mockList.add("java");
 
         ArgumentCaptor<String> argumentCaptor = ArgumentCaptor.forClass(String.class);
+        verify(mockList).add(argumentCaptor.capture());
         assertEquals("java", argumentCaptor.getValue());
 
     }
@@ -29,7 +30,6 @@ public class ArgumentCaptureBasicTest {
 
         ArgumentCaptor<String> argumentCaptor = ArgumentCaptor.forClass(String.class);
         verify(mockList).add(argumentCaptor.capture());
-
         assertEquals(Mockito.anyString(), argumentCaptor.getValue());
     }
 
