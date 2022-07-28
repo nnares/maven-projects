@@ -1,9 +1,11 @@
 
+
 Children should not examine the private members of their parents
 
 
 
 =============================================qn 2==========================================================
+file link - https://www.dropbox.com/s/7w9mnlu9hxkxgaz/merge.zip?dl=0
 
 source/com/tc/text/Banner.java
 model/common-api/src/com/tc/text/Banner.java
