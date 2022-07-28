@@ -1,0 +1,97 @@
+
+Children should not examine the private members of their parents
+
+
+
+=============================================qn 2==========================================================
+
+source/com/tc/text/Banner.java
+model/common-api/src/com/tc/text/Banner.java
+dest/common-api/src/main/java/com/tc/text/Banner.java
+
+====
+E:/FAST/swAG/merge/source +  com\tc\aspectwerkz\reflect\ClassInfo.java
+
+Source - E:/FAST/swAG/merge/source/ + \com\tc\aspectwerkz\reflect\ClassInfo.java
+
+Model -  E:/FAST/swAG/merge/source/model/ + \common-api\src\com\tc\aspectwerkz\reflect\ClassInfo.java
+
+dest -   E:/FAST/swAG/merge/source/dest1
+
+====
+
+source : .java files
+
+
+List<String> sourceNames - get it from Souce Dir
+List<String> vslitorNames - get it from Validator Dir
+
+if(vslitorNames.conatins(sourceNames.get(i))
+ copy (source, DEst)
+
+
+sourceDirFiles.size() = 116
+modelDirFiles.size() = 276
+destDirFiles.size() = 243
+
+
+https://stackoverflow.com/questions/14676407/list-all-files-in-the-folder-and-also-sub-folders
+https://www.callicoder.com/java-copy-directory-recursively/
+
+
+
+=============================================qn 3==========================================================
+assessment-soln
+
+5,10,2,8,9,6,7,8,3,5,8,9,6,7,8
+					|
+					
+					
+Have a collection Holder class -> which will hold the collection 
+we has apply set of oprations from Interface at at any point of time, for collected element in thread safe manner
+
+one stream <- Holder(List<Integer> list)
+operations -> mean, min, max, insertion
+
+==============3==============
+
+https://techdose.co.in/median-from-data-stream/
+https://www.baeldung.com/java-stream-integers-median-using-heap
+https://github.com/JayaramachandranAugustin/Interview/blob/master/Algorithm/Heap/find_median_from_data_stream.md
+https://javabypatel.blogspot.com/2019/04/find-running-median-from-stream-of-integer.html
+
+mean & median are not same
+https://www.vocabulary.com/articles/chooseyourwords/mean-median-average/
+------------
+Variance and Standard Deviation of an array
+
+mean of arr[0..n-1] = ∑(arr[i]) / n
+Variance = ∑(arr[i] – mean)^2 / n
+Since data is : 0 to n-1 :  div only n, not n-1
+
+
+
+
+------------same like 3 problem on hacker rank----------------
+
+https://www.hackerrank.com/challenges/s10-basic-statistics/problem
+https://gist.github.com/asela38/ed553c6908976ffc1398dd9cd83a15e6
+
+
+
+
+=============================================Extra==========================================================
+
+java + double +NaN
+
+https://stackoverflow.com/questions/1456566/how-do-you-test-to-see-if-a-double-is-equal-to-nan
+
+=========
+LLD
+chess board game
+
+HLD
+dabba
+
+LLD
+class

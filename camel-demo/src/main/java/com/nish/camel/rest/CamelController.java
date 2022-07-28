@@ -13,6 +13,11 @@ public class CamelController {
     @Autowired
     ProducerTemplate producerTemplate;
 
+    @RequestMapping(value = "/route", method = RequestMethod.GET)
+    public void invokeRoute() {
+        producerTemplate.sendBody("direct:ftl-conversion", "invoking camel route");
+    }
+
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public void startCamel() {
         producerTemplate.sendBody("direct:firstRoute", "Calling via Spring Boot Rest Controller");
@@ -25,7 +30,7 @@ public class CamelController {
 
     @RequestMapping(value = "/getAllContact", method = RequestMethod.GET)
     public void getAllContact() {
-        producerTemplate.sendBody("direct:fetchDBRoute");
+        producerTemplate.sendBody("direct:fetchDBRoute", "DB fetch");
     }
 
 }

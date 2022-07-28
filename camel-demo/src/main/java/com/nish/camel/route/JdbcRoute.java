@@ -14,7 +14,6 @@ public class JdbcRoute extends RouteBuilder {
 
 	@Override
 	public void configure() throws Exception {
-		final String sql = "select * from contact";
 
 /*
 		from("timer://my-timer?repeatCount=1")
@@ -40,10 +39,7 @@ public class JdbcRoute extends RouteBuilder {
 				})
 				.to("file:" + "{{destination.file.path}}" + "?fileName=contact_tbl.txt&fileExist=Append");
 
-		from("direct:fetchDBRoute")
-				.log("Get all contacts")
-				.setBody(constant(sql))
-				.to("jdbc:dataSource");
+
 
 
 	}

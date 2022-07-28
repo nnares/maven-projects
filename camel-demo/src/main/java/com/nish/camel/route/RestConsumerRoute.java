@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  *
  * */
 //@Component
-public class RestRoute extends RouteBuilder {
+public class RestConsumerRoute extends RouteBuilder {
 
     private String uri = "todos/1";
 
