@@ -1,6 +1,10 @@
 package com.nishchay.sample;
 
-public class Math {
+public class MathUtils {
+
+	public static int add(int x, int y) {
+		return x + y;
+	}
 
 	public int sum(int x, int y) {
 		return x + y;
