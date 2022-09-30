@@ -26,10 +26,13 @@ public class HamcrestMatcherTest {
 
     @Test
     public void basicHamcrestNumberMatcher() {
+        assertThat(5, greaterThan(2));
         assertThat(5, greaterThanOrEqualTo(5));
         assertThat(-1, lessThan(0));
         assertThat(-1, lessThanOrEqualTo(5));
         assertThat(1.2, closeTo(1, 0.5));
+        assertThat(1.2, greaterThan(1.0));
+
 
         assertThat(Integer.valueOf(1), instanceOf(Integer.class));
         // shortcut for instanceOf
