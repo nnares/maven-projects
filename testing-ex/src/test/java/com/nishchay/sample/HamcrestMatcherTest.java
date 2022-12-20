@@ -14,6 +14,12 @@ import static org.hamcrest.text.IsEmptyString.emptyString;
 public class HamcrestMatcherTest {
 
     @Test
+    public void sample() {
+        System.out.println("test run");
+        assertThat(5, is(greaterThan(2)));
+    }
+
+    @Test
     public void basicHamcrestBooleanMatcher() {
         boolean a = true;
         boolean b = true;
