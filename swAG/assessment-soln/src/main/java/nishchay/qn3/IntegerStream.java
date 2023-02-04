@@ -9,6 +9,10 @@ import java.util.List;
  * IntegerStream class - providing implementation for Statistic interface for a stream of Integer
  *
  * @author Nishchay Naresh
+ *
+ * Soln1 - keep to write place under synchronisation, let the reader have lateste value using volatile
+ * Soln2 - use the lock api to guard at all the read & write place - but in this case we will get less performance
+ * soln3 -
  */
 public class IntegerStream implements Statistic {
 
