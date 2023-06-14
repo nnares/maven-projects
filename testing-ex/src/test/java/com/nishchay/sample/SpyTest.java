@@ -10,6 +10,14 @@ import static org.hamcrest.Matchers.hasSize;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.verify;
 
+
+/*
+* There are times when we would like to use most of the original object’s behavior but mock only a portion of it.
+*  This is called spying objects, also called partial mocking.
+*
+*  We create the spy object using org.mockito.Mockito.spy(real object)
+*
+* */
 public class SpyTest {
 
     @Test
