@@ -1,0 +1,13 @@
+
+
+server:
+  port: 8081
+
+
+cache:
+  config:
+    classpath: /cache
+    external:                # blank value to let the file pick from classpath
+
+  discoverable:
+    cacheManagers: cache-manager1,cache-manager2,cache-manager3,cache-manager4
