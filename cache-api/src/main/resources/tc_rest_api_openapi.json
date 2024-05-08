@@ -1,0 +1,440 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Terracotta REST API",
+    "description": "A REST API for accessing a Terracotta Server Array",
+    "version": "0.1.0"
+  },
+  "tags": [
+    {
+      "name": "store",
+      "description": "Terracotta Store Operations"
+    },
+    {
+      "name": "cache",
+      "description": "Ehcache Operations"
+
+    }],
+  "paths": {
+
+    "/{dataset}/schema": {
+      "parameters": [
+        { "$ref": "#/components/parameters/DatasetName"}
+      ],
+      "get": {
+        "tags": ["store"],
+        "summary": "Retrieve the inferred schema of this dataset",
+        "responses": {
+          "200": {
+            "description": "discovered schema",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/DatasetSchema" },
+                "example": {
+                  "key": {
+                    "name": "key",
+                    "type": "int"
+                  },
+                  "cells": [
+                    {
+                      "name": "timestamp",
+                      "type": "long"
+                    },
+                    {
+                      "name": "payload",
+                      "type": "bytes"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/{dataset}/records/{key}": {
+      "parameters": [
+        { "$ref": "#/components/parameters/DatasetKey"},
+        { "$ref": "#/components/parameters/DatasetName"}
+      ],
+      "get": {
+        "tags": ["store"],
+        "summary": "Get a record",
+        "description": "Returns the record associated with the given key as a JSON object.",
+        "responses": {
+          "200": { "$ref": "#/components/responses/FullRecord" },
+          "404": { "$ref": "#/components/responses/MissingRecord" },
+          "default": { "$ref": "#/components/responses/ServerError" }
+        }
+      },
+      "put": {
+        "tags": ["store"],
+        "summary": "Add or replace a record",
+        "description": "Adds a record associated with the given key, replacing any existing record if one exists.",
+        "parameters": [{
+          "$ref": "#/components/parameters/ResponseBodyRequired"
+        }],
+        "responses": {
+          "200": { "$ref": "#/components/responses/FullRecord"},
+          "204": { "$ref": "#/components/responses/OperationSuccess"},
+          "default": { "$ref":  "#/components/responses/ServerError"}
+        }
+      },
+      "patch": {
+        "tags": ["store"],
+        "summary": "Update (patch) a record",
+        "description": "Atomically modifies a record by patching it using the supplied JSON patch (https://jsonpatch.com).",
+        "parameters": [{
+          "$ref": "#/components/parameters/ResponseBodyRequired"
+        }],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "https://json.schemastore.org/json-patch#/"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "$ref": "#/components/responses/FullRecord" },
+          "204": { "$ref": "#/components/responses/OperationSuccess" },
+          "404": { "$ref": "#/components/responses/MissingRecord"},
+          "default": { "$ref": "#/components/responses/ServerError" }
+        }
+      },
+      "delete": {
+        "tags": ["store"],
+        "summary": "Delete a record",
+        "description": "Deletes the given record, optionally returning it in JSON form",
+        "parameters": [{
+          "$ref": "#/components/parameters/ResponseBodyRequired"
+        }],
+        "responses": {
+          "200": { "$ref": "#/components/responses/FullRecord" },
+          "204": { "$ref": "#/components/responses/OperationSuccess" },
+          "404": { "$ref": "#/components/responses/MissingRecord"},
+          "default": { "$ref": "#/components/responses/ServerError" }
+        }
+      }
+    },
+
+    "/{dataset}/records/{key}/{cell}": {
+      "parameters": [
+        { "$ref": "#/components/parameters/DatasetKey"},
+        { "$ref": "#/components/parameters/DatasetName"}
+      ],
+
+      "get": {
+        "tags": ["store"],
+        "summary": "Get a single cell",
+        "description": "Retrieves a single cell from a record, returning it in it's most natural form (JSON or application/octet-stream)",
+        "responses": {
+          "200": { "$ref": "#/components/responses/SingleCell" },
+          "204": { "$ref": "#/components/responses/MissingCell" },
+          "404": { "$ref": "#/components/responses/MissingRecord" },
+          "default": { "$ref": "#/components/responses/ServerError" }
+        }
+      },
+      "put": {
+        "tags": ["store"],
+        "summary": "Add or replace a single cell",
+        "description": "Adds a single cell to the identified record, replacing any existing value for that cell if one exists. ",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ResponseBodyRequired"
+          }
+        ],
+        "responses": {
+          "200": { "$ref": "#/components/responses/SingleCell" },
+          "204": { "$ref": "#/components/responses/OperationSuccess"},
+          "404": { "$ref": "#/components/responses/MissingRecord" },
+          "default": { "$ref": "#/components/responses/ServerError" }
+        }
+      },
+      "patch": {
+        "tags": ["store"],
+        "summary": "Update (patch) a single cell",
+        "description": "Updates a single in the identified record using the supplied JSON patch. ",
+        "parameters": [{
+          "$ref": "#/components/parameters/ResponseBodyRequired"
+        }
+        ],
+        "responses": {
+          "200": { "$ref": "#/components/responses/SingleCell" },
+          "204": { "$ref": "#/components/responses/OperationSuccess" },
+          "404": { "$ref": "#/components/responses/MissingRecord" },
+          "default": { "$ref": "#/components/responses/ServerError" }
+        }
+      },
+      "delete": {
+        "tags": ["store"],
+        "summary": "Delete a single cell",
+        "description": "Delete a single cell from the identified record.",
+        "parameters": [{
+          "$ref": "#/components/parameters/ResponseBodyRequired"
+        }
+        ],
+        "responses": {
+          "200": { "$ref": "#/components/responses/SingleCell" },
+          "204": { "$ref": "#/components/responses/OperationSuccess" },
+          "404": { "$ref": "#/components/responses/MissingRecord" },
+          "default": { "$ref": "#/components/responses/ServerError" }
+        }
+      }
+    },
+
+    "/{dataset}/records": {
+      "parameters": [
+        { "$ref": "#/components/parameters/DatasetName"},
+        {
+          "name": "jq",
+          "description": "jq query expression",
+          "in": "query"
+        }
+      ],
+      "get": {
+        "tags": ["store"],
+        "summary": "Stream a (subset of a) dataset",
+        "responses": {
+          "200": {
+            "description": "Potentially very long stream of JSON data",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        }
+      }
+    },
+
+
+    "/{cache}/{key}": {
+      "parameters": [
+        { "$ref": "#/components/parameters/CacheKey"},
+        { "$ref": "#/components/parameters/CacheName"}
+      ],
+      "get": {
+        "tags": ["cache"],
+        "summary": "Get a record",
+        "description": "Returns the record associated with the given key as a JSON object.",
+        "responses": {
+          "200": { "$ref": "#/components/responses/CacheValue" },
+          "404": { "$ref": "#/components/responses/MissingEntry" },
+          "default": { "$ref": "#/components/responses/ServerError" }
+        }
+      },
+      "put": {
+        "tags": ["cache"],
+        "summary": "Add or replace a record",
+        "description": "Adds a record associated with the given key, replacing any existing record if one exists.",
+        "parameters": [{
+          "$ref": "#/components/parameters/ResponseBodyRequired"
+        }],
+        "responses": {
+          "204": { "$ref": "#/components/responses/OperationSuccess"},
+          "default": { "$ref":  "#/components/responses/ServerError"}
+        }
+      },
+      "delete": {
+        "tags": ["cache"],
+        "summary": "Delete a record",
+        "description": "Deletes the given record, optionally returning it in JSON form",
+        "parameters": [{
+          "$ref": "#/components/parameters/ResponseBodyRequired"
+        }],
+        "responses": {
+          "204": { "$ref": "#/components/responses/OperationSuccess" },
+          "404": { "$ref": "#/components/responses/MissingEntry"},
+          "default": { "$ref": "#/components/responses/ServerError" }
+        }
+      }
+    }
+  },
+
+  "components": {
+    "schemas": {
+      "DatasetSchema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/DatasetSchema/properties/cells/items"
+          },
+          "cells": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Exposed name"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Native Terracotta type",
+                  "enum": [
+                    "bool",
+                    "char",
+                    "int",
+                    "long",
+                    "double",
+                    "string",
+                    "bytes",
+                    "map",
+                    "list"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "DatasetName": {
+        "name": "dataset",
+        "in": "path",
+        "description": "The dataset name/alias",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "mydataset"
+      },
+      "DatasetKey": {
+        "name": "key",
+        "in": "path",
+        "description": "The requested key in primitive string form",
+        "required": true,
+        "schema": {
+          "anyOf": [{
+            "type": "string"
+          }, {
+            "type": "number"
+          }]
+        },
+        "examples": {
+          "string": {
+            "description": "A string key",
+            "value": "f0ead11e-9d8e-11ed-a8fc-0242ac120002"
+          },
+          "integer": {
+            "description": "An integer key",
+            "value": "42"
+          }
+        }
+      },
+      "CacheName": {
+        "name": "cache",
+        "in": "path",
+        "description": "The cache name/alias",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "mycache"
+      },
+      "CacheKey": {
+        "name": "key",
+        "in": "path",
+        "description": "The requested key in primitive form",
+        "required": true
+      },
+
+      "ResponseBodyRequired": {
+        "name": "responseBodyRequired",
+        "in": "header",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        },
+        "example": true
+      }
+    },
+    "responses": {
+      "FullRecord": {
+        "description": "A full record in json form",
+        "content": {
+          "application/json": {
+            "example": {
+              "$ref": "#/components/examples/FullRecord"
+            }
+          }
+        }
+      },
+      "MissingRecord": {
+        "description": "No record found"
+      },
+      "SingleCell": {
+        "description": "The named cell from the record for the given key",
+        "content": {
+          "application/json": {
+            "examples": {
+              "primitive": { "$ref": "#/components/examples/PrimitiveCell" },
+              "mapCell": { "$ref": "#/components/examples/MapCell" },
+              "listCell": { "$ref": "#/components/examples/ListCell" }
+            }
+          },
+          "application/octet-stream" : {
+          }
+        }
+      },
+      "MissingCell": {
+        "description": "Cell not found (in record)"
+      },
+      "OperationSuccess": {
+        "description": "Operation succeeded"
+      },
+      "ServerError": {
+        "description": "Server error"
+      },
+      "MissingEntry": {
+        "description": "Cached value not found"
+      },
+      "CacheValue": {
+        "description": "A cached value in primitive form",
+        "content": {
+          "application/json": {},
+          "application/octet-stream": {}
+        }
+      }
+    },
+    "examples": {
+      "FullRecord" : {
+        "description": "",
+        "summary": "",
+        "value": {
+          "key": 1,
+          "name": "Eric Wimp",
+          "age": 42,
+          "address": {
+            "number": 29,
+            "street": "Acacia Road",
+            "town": "Nuttytown"
+          },
+          "aliases": ["Eric Twinge", "Bananaman"]
+        }
+      },
+      "PrimitiveCell" : {
+        "summary": "A primitive cell value",
+        "description": "A single cell with a primitive type (string, integer, long,  ",
+        "value": "Eric Wimp"
+      },
+      "MapCell" : {
+        "description": "A map/object cell value",
+        "summary": "",
+        "value": {
+          "number": 29,
+          "street": "Acacia Road",
+          "town": "Nuttytown"
+        }
+      },
+      "ListCell" : {
+        "description": "A list/array cell value",
+        "summary": "",
+        "value": ["Eric Twinge", "Bananaman"]
+      }
+    }
+  }
+}
